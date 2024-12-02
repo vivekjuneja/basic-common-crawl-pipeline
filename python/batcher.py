@@ -41,7 +41,7 @@ def main() -> None:
     channel = rabbitmq_channel()
     start_http_server(9000)
 
-    with open(args.cluster_index_filename, "r") as csvfile:
+    with open(args.cluster_idx_filename, "r") as csvfile:
         index_reader = csv.reader(csvfile, delimiter="\t")
         for cdx_chunk in index_reader:
             data = download_and_unzip(
